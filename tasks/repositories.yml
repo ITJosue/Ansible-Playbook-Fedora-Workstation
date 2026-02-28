@@ -64,10 +64,11 @@
 
 - name: Add Zoom repository
   yum_repository:
-    url: https://repo.zoom.us/repo/rpm/zoom_release.repo
-    dest: /etc/yum.repos.d/zoom_release.repo
-
-- name: Import Zoom GPG key
-  rpm_key:
-    key: https://zoom.us/linux/download/pubkey?version=6-3-10
-    state: present
+    name: zoom-release
+    description: zoom (release)
+    baseurl: https://repo.zoom.us/repo/rpm/release/
+    enabled: yes
+    gpgcheck: yes
+    repo_gpgcheck: yes
+    gpgkey: https://zoom.us/linux/download/pubkey
+    skip_if_unavailable: yes
