@@ -10,4 +10,4 @@
     - fail2ban.service
     - cockpit.socket
     - snapd.socket
-    - nix-daemon.socket
+    - nix-daemon.service
