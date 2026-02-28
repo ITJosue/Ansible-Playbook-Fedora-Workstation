@@ -1,4 +1,14 @@
 ---
+- name: Pre-create Homebrew directory to bypass sudo requirement
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        owner: "{{ ansible_env.SUDO_USER | default(ansible_env.USER) }}"
+        mode: '0755'
+      loop:
+        - /home/linuxbrew
+        - /home/linuxbrew/.linuxbrew
+        
 - name: Check if Homebrew is already installed
   ansible.builtin.command: brew --version
   register: brew_check
