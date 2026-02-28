@@ -1,4 +1,5 @@
 - name: Enable system service units
+  become: true
   ansible.builtin.systemd:
     name: "{{ item }}"
     enabled: true
