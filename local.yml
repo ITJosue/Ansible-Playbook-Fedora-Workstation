@@ -28,8 +28,8 @@
     - name: Configure users and groups
       include_tasks: tasks/users-groups.yml
       
-    - name: Initialize system
-      include_tasks: tasks/initialize.yml
+ #   - name: Initialize system
+ #     include_tasks: tasks/initialize.yml
 
  #   - name: Configure virtualization
  #     include_tasks: tasks/virtualization.yml
