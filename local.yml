@@ -29,12 +29,12 @@
       include_tasks: tasks/users-groups.yml
       
  #   - name: Initialize system
- #     include_tasks: tasks/initialize.yml
+ #     include_tasks: tasks/initialize.yml #in-progress
 
  #   - name: Configure virtualization
- #     include_tasks: tasks/virtualization.yml
+ #     include_tasks: tasks/virtualization.yml #in-progress
 
- #   - name: Install and configure Homebrew
+ #   - name: Install and configure Homebrew #in-progress
  #     include_tasks: tasks/homebrew.yml
  #     args:
  #       apply:
