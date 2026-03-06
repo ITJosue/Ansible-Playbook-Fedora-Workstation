@@ -1,3 +1,6 @@
 - name: Set system hostname
   ansible.builtin.hostname:
     name: "{{ hostname }}"
+    
+- name: Define VM 
+  command: virsh define "{{ ../VMs/ | basename }}"
