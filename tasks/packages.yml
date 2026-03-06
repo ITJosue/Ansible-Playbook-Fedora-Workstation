@@ -1,44 +1,19 @@
 ---
-- name: Remove akregator*
-  dnf:
-    state: absent
-    autoremove: true
-    name:
-      - akregator*
-      
-- name: Remove firefox*
-  dnf:
-    state: absent
-    autoremove: true
-    name:
-      - firefox*
-
-- name: Remove kdepim*
-  dnf:
-    state: absent
-    autoremove: true
-    name:
-      - kdepim*
-
-- name: Remove libreoffice*
-  dnf:
-    state: absent
-    autoremove: true
-    name:
-      - libreoffice*
-
 - name: Remove more unwanted default packages
   dnf:
     state: absent
     autoremove: true
     name:
-      - dragon
-      - kcalc
-      - kwrite
-      - neochat
-      - okular
-      - toolbox
-
+      - "akregator*"
+      - "firefox*"
+      - "kdepim*"
+      - "libreoffice*"
+      - "dragon"
+      - "kcalc"
+      - "kwrite"
+      - "neochat"
+      - "okular"
+      - "toolbox"
 - name: Install Group packages
   dnf:
     state: present
