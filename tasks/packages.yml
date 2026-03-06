@@ -8,6 +8,7 @@
 - name: Print the DNF removal output
   ansible.builtin.debug:
     msg: "{{ dnf_shell_output.stdout_lines }}"
+    
 - name: Install Group packages
   dnf:
     state: present
