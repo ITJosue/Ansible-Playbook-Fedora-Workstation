@@ -43,8 +43,8 @@ sudo dnf install ansible
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/ITJosue/Ansible-Postinstall.git
-cd Ansible-Postinstall
+git clone https://github.com/ITJosue/Ansible-Playbook-Fedora-Workstation.git
+cd Ansible-Playbook-Fedora-Workstation
 ```
 
 2. *(Optional)* Edit `local.yml` to customize the **hostname** and **XML directory** variables:
@@ -64,7 +64,7 @@ sudo ansible-playbook local.yml
 Or run directly from GitHub:
 
 ```bash
-curl -sSL https://github.com/ITJosue/Ansible-Postinstall/raw/refs/heads/main/postinstall.sh | bash
+curl -sSL https://github.com/ITJosue/Ansible-Playbook-Fedora-Workstation/raw/refs/heads/main/postinstall.sh | bash
 ```
 
 ---
@@ -79,10 +79,12 @@ Adds third-party YUM/DNF repositories for:
 
 - **Google Chrome**
 - **Microsoft Edge**
+- **Microsoft Production**
 - **Microsoft Teams**
-- **Visual Studio Code**
 - **ProtonVPN**
+- **Visual Studio Code**
 - **Zoom**
+- **Hashicorp**
 
 ### 2. Update System
 
@@ -156,7 +158,7 @@ Installs [Homebrew](https://brew.sh/) (Linuxbrew) for access to additional packa
 ## Project Structure
 
 ```
-Ansible-Postinstall/
+Ansible-Playbook-Fedora-Workstation/
 ├── local.yml                  # Main playbook entry point
 ├── tasks/
 │   ├── repositories.yml       # Third-party repo configuration
@@ -167,8 +169,18 @@ Ansible-Postinstall/
 │   ├── flatpaks.yml           # Flatpak setup and installation
 │   ├── initialize.yml         # Hostname and container init
 │   ├── users-groups.yml       # User creation and group assignment
-│   ├── virtualization.yml     # VM XML import via virsh
 │   └── homebrew.yml           # Homebrew installation
+├── Scripts/
+│   ├── packages.sh            # Script for package setup
+│   ├── postinstall.sh         # Script to trigger postinstall directly
+│   └── sandbox.sh             # Script for local sandboxing
+├── Vagrant/
+│   └── Vagrantfile            # Vagrant environment definition
+├── VMs/                       # Virtual Machine definitions
+│   ├── Android.xml
+│   ├── Linux.xml
+│   └── Windows.xml
+├── logs/                      # Log generation directory
 ├── README.md
 ├── LICENSE
 └── travis.yml

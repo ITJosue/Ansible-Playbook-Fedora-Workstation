@@ -28,15 +28,12 @@
     - name: Configure users and groups
       include_tasks: tasks/users-groups.yml
       
- #   - name: Initialize system
- #     include_tasks: tasks/initialize.yml #in-progress
+    - name: Initialize system
+      include_tasks: tasks/initialize.yml #in-progress
 
- #   - name: Configure virtualization
- #     include_tasks: tasks/virtualization.yml #in-progress
-
- #   - name: Install and configure Homebrew #in-progress
- #     include_tasks: tasks/homebrew.yml
- #     args:
- #       apply:
- #         become: yes
- #         become_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER) }}"
+    - name: Install and configure Homebrew #in-progress
+      include_tasks: tasks/homebrew.yml
+      args:
+        apply:
+          become: yes
+          become_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER) }}"
