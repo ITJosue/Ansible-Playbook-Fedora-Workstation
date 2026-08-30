@@ -1,0 +1,8 @@
+- name: Set system hostname
+  ansible.builtin.hostname:
+    name: "{{ hostname }}"
+    
+- name: Define VMs via virsh
+  command: "virsh define {{ item }}"
+  with_fileglob:
+    - "../VMs/*.xml"

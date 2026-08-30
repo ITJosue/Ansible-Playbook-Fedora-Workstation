@@ -1,0 +1,17 @@
+---
+- name: Force remove packages via DNF shell command
+  ansible.builtin.shell: "dnf remove -y 'akregator*' 'firefox*' 'kdepim*' 'libreoffice*' dragon kcalc kwrite neochat okular toolbox && dnf autoremove -y"
+  become: true
+  register: dnf_shell_output
+  changed_when: "'Nothing to do' not in dnf_shell_output.stdout"
+
+- name: Print the DNF removal output
+  ansible.builtin.debug:
+    msg: "{{ dnf_shell_output.stdout_lines }}"
+
+- name: Install packages script
+  ansible.builtin.script: ../Scripts/packages.sh
+  become: true
+  args:
+    # This prevents the script from running again if this file exists
+    creates: /var/log/packages.log

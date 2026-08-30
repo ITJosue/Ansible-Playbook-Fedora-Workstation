@@ -1,0 +1,39 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+  vars:
+    hostname: "fedora" # CHANGE THIS: Desired system hostname
+    xml_dir: "$HOME/XMLs" # CHANGE THIS: Path to XML files
+
+  tasks:
+    - name: Configure repositories
+      include_tasks: tasks/repositories.yml
+
+    - name: Update system
+      include_tasks: tasks/update.yml
+
+    - name: Install packages
+      include_tasks: tasks/packages.yml
+
+    - name: Install snaps
+      include_tasks: tasks/snaps.yml
+
+    - name: Enable system services
+      include_tasks: tasks/services.yml
+
+    - name: Install flatpaks
+      include_tasks: tasks/flatpaks.yml
+
+    - name: Configure users and groups
+      include_tasks: tasks/users-groups.yml
+      
+    - name: Initialize system
+      include_tasks: tasks/initialize.yml #in-progress
+
+    - name: Install and configure Homebrew #in-progress
+      include_tasks: tasks/homebrew.yml
+      args:
+        apply:
+          become: yes
+          become_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER) }}"
