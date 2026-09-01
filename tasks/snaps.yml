@@ -12,26 +12,27 @@
       - bitwarden
       - chromium
       - digikam
+      - firefox
+      - freecad
       - gimp
       - gnome-characters
-      - haruna
       - inkscape
       - k3b
       - kget
       - lxd
+      - microcloud
       - multipass
       - node-red
       - nordvpn
       - obs-studio
       - openvino-ai-plugins-gimp
-      - openvino-toolkit-2404
       - postman
       - proton-mail
       - snap-store
       - steam
       - tailscale
       - telegram-desktop
-      - thunderbird
+      - termius-app
 
 - name: Install Snap packages with --classic flag
   snap:

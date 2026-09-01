@@ -26,35 +26,27 @@
     name:
       - app.zen_browser.zen
       - com.bambulab.BambuStudio
-      - com.belmoussaoui.Decoder
+      - com.brave.Browser
       - com.collaboraoffice.Office
+      - com.github.polymeilex.neothesia
       - com.github.wwmm.easyeffects
-      - com.heroicgameslauncher.hgl
       - com.moonlight_stream.Moonlight
-      - com.rafaelmardojai.Blanket
       - com.ranfdev.DistroShelf
       - com.usebottles.bottles
+      - dev.lizardbyte.app.Sunshine
       - fr.handbrake.ghb
       - fr.romainvigier.MetadataCleaner
-      - info.febvre.Komikku
       - io.anytype.anytype
       - io.ente.auth
-      - io.freetubeapp.FreeTube
       - io.github.CyberTimon.RapidRAW
       - io.github.flattool.Warehouse
-      - io.github.lainsce.Colorway
-      - io.github.mhogomchungu.media-downloader
-      - io.github.nokse22.Exhibit
       - io.github.peazip.PeaZip
-      - io.github.zingytomato.netpeek
       - io.podman_desktop.PodmanDesktop
       - it.mijorus.gearlever
       - me.timschneeberger.jdsp4linux
       - net.ankiweb.Anki
       - net.lutris.Lutris
       - net.xmind.XMind
-      - org.cryptomator.Cryptomator
-      - org.deskflow.deskflow
       - org.fcast.Receiver
       - org.gnome.Evince
       - org.gnome.Firmware
@@ -62,24 +54,29 @@
       - org.gnome.Snapshot
       - org.gnome.Weather
       - org.gnome.World.PikaBackup
-      - org.gnome.design.Emblem
       - org.gnome.design.IconLibrary
-      - org.gnucash.GnuCash
       - org.kde.CrowTranslate
       - org.kde.cantor
+      - org.kde.drawy
       - org.kde.francis
+      - org.kde.glaxnimate
+      - org.kde.haruna
       - org.kde.itinerary
+      - org.kde.kalk
       - org.kde.kalm
       - org.kde.kdenlive
       - org.kde.kid3
+      - org.kde.kodaskanna
+      - org.kde.krita
       - org.kde.kst
       - org.kde.labplot
+      - org.kde.merkuro
       - org.kde.tellico
+      - org.keepassxc.KeePassXC
       - org.localsend.localsend_app
-      - org.mixxx.Mixxx
       - org.nicotine_plus.Nicotine
       - org.qbittorrent.qBittorrent
-      - org.upscayl.Upscayl
+      - org.vanillaos.ApxGUI
       - org.vinegarhq.Sober
       - tv.kodi.Kodi
     state: present
@@ -92,11 +89,7 @@
       - org.clementine_player.Clementine
       - org.gnome.Evolution
       - org.gnome.Meld
-      - org.kde.calligraplan
-      - org.kde.kalk
-      - org.kde.krita
       - org.kde.rocs
-      - org.keepassxc.KeePassXC
     state: present
     method: system
     remote: fedora
